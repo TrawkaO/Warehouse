@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using Warehouse.Domain.Entity;
 using Warehouse.Models;
 
 namespace Warehouse.Controllers
@@ -15,6 +16,11 @@ namespace Warehouse.Controllers
 
         public IActionResult Index()
         {
+            Car car = new Car()
+            {
+                Name = "Lada",
+                Speed = 220
+            };
             return View();
         }
 
