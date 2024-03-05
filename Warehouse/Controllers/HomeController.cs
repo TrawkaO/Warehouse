@@ -21,7 +21,7 @@ namespace Warehouse.Controllers
                 Name = "Lada",
                 Speed = 220
             };
-            return View();
+            return View(car);
         }
 
         public IActionResult Privacy()
