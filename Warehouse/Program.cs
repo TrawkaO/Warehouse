@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Warehouse.DAL;
+using Warehouse.DAL.Interfaces;
+using Warehouse.DAL.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +20,7 @@ if (!app.Environment.IsDevelopment())
     var connection = builder.Configuration.GetConnectionString("DefaultConnection");
     builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connection));
+    builder.Services.AddScoped<ICarRepository,CarRepository>();
 
 
 
